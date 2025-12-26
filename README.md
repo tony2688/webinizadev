@@ -1,99 +1,61 @@
-# WebinizaDev — Proyecto Laravel
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Sitio institucional y asistente IA de Webiniza desarrollado con Laravel 12 (PHP 8.2), Vite 6 y Tailwind CSS 4. El código principal vive en `webinizadev/` dentro de este repositorio.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-## Características
-- Laravel 12, PHP 8.2 y SQLite por defecto en desarrollo.
-- Frontend con Vite y Tailwind CSS 4.
-- Rutas y vistas orientadas a landing institucional (`resources/views`).
-- Endpoint de asistente IA con dominio temático y RAG opcional.
+## About Laravel
 
-## Requisitos
-- `PHP >= 8.2` y `Composer`.
-- `Node.js >= 18` y `npm`.
-- `SQLite` (desarrollo por defecto) o MySQL/PostgreSQL si se configura.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Instalación
-```bash
-cd webinizadev
-composer install
-npm install
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-# Copiar variables de entorno (si no se hizo automáticamente)
-copy .env.example .env   # Windows
-# Establecer APP_KEY
-php artisan key:generate
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-# Base de datos en desarrollo (SQLite)
-mkdir database 2>NUL & type NUL > database\database.sqlite
-php artisan migrate
-```
+## Learning Laravel
 
-Configurar en `.env` al menos:
-```
-APP_ENV=local
-APP_DEBUG=true
-APP_URL=http://127.0.0.1:8000
-DB_CONNECTION=sqlite
-```
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## Desarrollo
-- Todo en uno: `composer dev` (inicia servidor Laravel, cola, logs y Vite).
-- Manual: `php artisan serve` y `npm run dev`.
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-Aplicación por defecto en `http://127.0.0.1:8000`.
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Testing
-```bash
-composer test
-```
-Ejecuta PHPUnit 11 y limpia configuración antes de testear.
+## Laravel Sponsors
 
-## Build de producción
-```bash
-npm run build
-php artisan optimize:clear
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
-```
-En producción, servir el directorio `public/` con `APP_ENV=production` y `APP_DEBUG=false`.
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-## Estructura del proyecto
-- `app/` lógica de aplicación (controladores, servicios). Ej.: `app/Http/Controllers/AiChatController.php`.
-- `resources/views/` vistas Blade (layouts y secciones).
-- `routes/web.php` rutas HTTP, incluyendo el endpoint de chat.
-- `config/` configuración de framework y del asistente (`config/ai_facts.php`).
-- `database/` migraciones y base SQLite en desarrollo.
+### Premium Partners
 
-## API del asistente IA
-- `POST /api/ai-chat` (`webinizadev/routes/web.php:15`)
-- Body esperado: `prompt` (texto libre)
-- Respuesta: `{ reply: string, model?: string, usage?: any }`
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development/)**
+- **[Active Logic](https://activelogic.com)**
 
-### Variables de entorno IA (principales)
-- `AI_BASE_URL` URL base del proveedor de IA.
-- `AI_PATH` ruta del endpoint de generación (por defecto `/v1/generate`).
-- `AI_API_KEY` clave de acceso.
-- `AI_TENANT_ID` tenant o espacio de trabajo.
-- `AI_MODEL` modelo a utilizar.
-- `AI_SYSTEM` mensaje de sistema (contexto del asistente).
-- `AI_TEMP`, `AI_MAX_TOKENS`, `AI_TIMEOUT`, `AI_SSL_VERIFY` ajustes de inferencia.
-- `AI_KB`, `AI_TOP_K`, `AI_MIN_SCORE`, `AI_FALLBACK`, `AI_REFUSAL_MESSAGE` parámetros de RAG y fallback.
-- `AI_STRICT_DOMAIN` y `AI_ALLOWED_TERMS` guard de dominio temático.
-- `CF_ACCESS_CLIENT_ID`, `CF_ACCESS_CLIENT_SECRET` headers para Cloudflare Access (opcional).
+## Contributing
 
-## Seguridad
-- No subir `.env`, claves ni tokens. Ver `.gitignore` existente.
-- Limitar el dominio del asistente con `AI_STRICT_DOMAIN=true` y `AI_ALLOWED_TERMS`.
-- Revisar logs y errores sensibles antes de exponer públicos.
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Licencia de Autor
-Copyright © 2025 Webiniza. Todos los derechos reservados.
+## Code of Conduct
 
-- El código, diseño y contenido del sitio están protegidos por derechos de autor.
-- No se permite la copia, distribución, modificación o uso comercial sin autorización previa y por escrito de Webiniza.
-- El uso queda limitado a fines internos del propietario del repositorio y colaboradores autorizados.
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Contacto
-Para permisos o dudas sobre la licencia: `info@webiniza.com`
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
