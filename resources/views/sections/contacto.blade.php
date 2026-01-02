@@ -100,17 +100,15 @@
                 </div>
             </div>
 
-            {{-- MAPA DARK MODE (Truco CSS) --}}
-            <div class="rounded-2xl overflow-hidden shadow-xl border border-white/10 h-64 relative group">
-                <div class="absolute inset-0 bg-[#9900ff]/10 pointer-events-none z-10 mix-blend-overlay"></div>
-
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.106067946263!2d-65.2072054249571!3d-26.83657787669264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0e9095679b%3A0x8613303323055374!2zTXXDsWVjYXMgODUsIDQwMDAgU2FuIE1pZ3VlbCBkZSBUdWN1bcOhbiwgVHVjdW3DoW4!5e0!3m2!1ses-419!2sar!4v1703612345678!5m2!1ses-419!2sar"
-                    width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
+            {{-- MAPA DARK MODE CORREGIDO --}}
+<div class="rounded-2xl overflow-hidden shadow-xl border border-white/10 h-64 relative group">
+    <div class="absolute inset-0 bg-[#9900ff]/10 pointer-events-none z-10 mix-blend-overlay"></div>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1234!2d-65.2056!3d-26.8300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0e27f91c9f%3A0x6731e808168e6467!2sMu%C3%B1ecas%2085%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+        width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
         </div>
 
         {{-- COLUMNA DERECHA: Formulario Pro --}}

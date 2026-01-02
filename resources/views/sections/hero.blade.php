@@ -1,126 +1,116 @@
-<section id="inicio"
-    class="relative min-h-[90vh] flex items-center px-6 lg:px-20 py-20 text-white overflow-hidden bg-[#2a002a]">
+<section
+    class="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-20 pt-24 pb-12 lg:pt-32 lg:pb-20 text-white overflow-hidden bg-transparent">
 
-    {{-- Vignette suave --}}
+    {{-- Vignette --}}
     <div
-        class="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_20%,rgba(0,0,0,0.5)_70%,rgba(0,0,0,0.9)_100%)]">
+        class="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.4)_60%,rgba(15,0,20,1)_100%)]">
     </div>
 
     {{-- Contenedor Principal --}}
-    <div class="max-w-7xl mx-auto z-20 relative w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="max-w-7xl mx-auto z-20 relative w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-        {{-- COLUMNA IZQUIERDA --}}
-        <div class="lg:col-span-7 flex flex-col justify-center animate-fade-in-left">
+        {{-- COLUMNA IZQUIERDA (Texto y CTA) --}}
+        <div class="lg:col-span-7 flex flex-col justify-center animate-fade-in-left text-center lg:text-left">
 
-            {{-- 1. BADGE CENTRADO (Corrección solicitada) --}}
-            <div class="w-full flex justify-center mb-8">
+            {{-- 1. BADGE --}}
+            <div class="w-full flex justify-center lg:justify-start mb-6 lg:mb-8">
                 <div
-                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-                    <span class="relative flex h-3 w-3">
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-lg">
+                    <span class="relative flex h-2.5 w-2.5">
                         <span
                             class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
                     </span>
-                    <span class="text-xs sm:text-sm font-medium tracking-wide text-white/90 uppercase">
-                        IA & Automatización Activa
+                    <span class="text-[10px] sm:text-xs font-medium tracking-wide text-white/90 uppercase">
+                        IA & Automatización
                     </span>
                 </div>
             </div>
 
-            {{-- Título (Mantenemos alineación izquierda para legibilidad, o centro si preferís todo centrado) --}}
-            <div class="text-center lg:text-left">
+            {{-- 2. TÍTULO PRINCIPAL (Ajustado Responsive) --}}
+            <div>
                 <h1
-                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 lg:mb-6 drop-shadow-2xl tracking-tight">
                     Poné tu negocio en <br />
                     <span
-                        class="bg-gradient-to-r from-[#ff002e] via-[#ff0080] to-[#9900ff] bg-clip-text text-transparent">
+                        class="bg-gradient-to-r from-[#ff0056] via-[#ff0080] to-[#9900ff] bg-clip-text text-transparent animate-gradient-x pb-1 inline-block">
                         Piloto Automático
                     </span>
                 </h1>
 
                 {{-- Descripción --}}
                 <p
-                    class="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mb-10 mx-auto lg:mx-0">
-                    Dejá de perder horas en tareas manuales. Creamos <b>Agentes de IA</b> como este, diseñados para
-                    vender, responder y organizar tu empresa 24/7.
+                    class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-10 font-light px-2 lg:px-0">
+                    Dejá de perder horas en tareas manuales. Creamos <b class="font-bold text-white">Agentes de IA</b>
+                    diseñados para vender, responder y organizar tu empresa 24/7.
                 </p>
 
-                {{-- Botones (Centrados en móvil, izquierda en desktop para seguir flujo de lectura) --}}
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6 mb-12 w-full">
+                {{-- Botones de Acción --}}
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 w-full px-4 lg:px-0">
+                    {{-- Botón Primario --}}
                     <a href="#contacto"
-                        class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full leading-none text-white font-bold text-base sm:text-lg bg-gradient-to-r from-[#ff002e] to-[#c00040] hover:from-[#d90026] hover:to-[#a60036] transition-all duration-300 shadow-[0_0_20px_rgba(255,0,46,0.4)] hover:shadow-[0_0_30px_rgba(255,0,46,0.6)] hover:-translate-y-1 border border-white/10 overflow-hidden">
+                        class="group relative inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-white font-bold text-sm sm:text-base bg-gradient-to-r from-[#ff0056] to-[#c00040] shadow-lg overflow-hidden border border-white/10 active:scale-95 transition-transform">
                         <div
                             class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700">
                         </div>
-                        <i class="fas fa-robot text-lg"></i>
-                        <span>Quiero mi Auditoría de IA</span>
+                        <i class="fas fa-robot"></i>
+                        <span>Quiero Auditoría IA</span>
                     </a>
-                    <a href="https://wa.me/543815555648" target="_blank"
-                        class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full leading-none text-white font-semibold text-base sm:text-lg bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all duration-300 backdrop-blur-sm">
-                        <i class="fab fa-whatsapp text-[#25D366] text-xl"></i>
-                        <span>Hablar con un Experto</span>
+
+                    {{-- Botón Secundario --}}
+                    <a href="https://wa.me/5493815555648" target="_blank"
+                        class="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-white font-semibold text-sm sm:text-base bg-white/5 border border-white/20 backdrop-blur-sm active:scale-95 transition-transform">
+                        <i class="fab fa-whatsapp text-[#25D366] text-lg"></i>
+                        <span>Hablar con Experto</span>
                     </a>
                 </div>
             </div>
 
-            {{-- 2. STACK TECNOLÓGICO CENTRADO (Corrección solicitada) --}}
-            <div class="w-full flex justify-center lg:justify-center border-t border-white/10 pt-8 mt-4">
+            {{-- 3. STACK TECNOLÓGICO --}}
+            <div class="w-full flex justify-center lg:justify-start border-t border-white/10 pt-6 mt-8 lg:mt-10">
                 <div
-                    class="flex flex-wrap items-center justify-center gap-6 opacity-60 hover:opacity-100 transition-all duration-500 grayscale hover:grayscale-0">
-                    <span class="text-[10px] uppercase tracking-widest text-white/60">Potenciado por:</span>
-                    <div class="flex items-center gap-4 text-2xl">
-                        <i class="fab fa-laravel" title="Laravel"></i>
-                        <i class="fas fa-brain" title="IA Generativa"></i>
-                        <i class="fas fa-bolt" title="Automatización"></i>
-                        <i class="fab fa-python" title="Python"></i>
+                    class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                    <span
+                        class="text-[10px] uppercase tracking-widest text-white/60 font-semibold w-full lg:w-auto text-center">Potenciado
+                        por:</span>
+                    <div class="flex items-center gap-5 text-xl sm:text-2xl text-white/90">
+                        <i class="fab fa-laravel"></i>
+                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-bolt"></i>
+                        <i class="fab fa-python"></i>
                     </div>
                 </div>
             </div>
         </div>
 
-        {{-- COLUMNA DERECHA: Robot --}}
-        <div class="lg:col-span-5 relative hidden lg:flex justify-center items-center perspective-1000 animate-fade-in-right"
-            style="animation-delay: 0.3s;">
+        {{-- COLUMNA DERECHA: Robot 3D (Oculto en móvil muy pequeño, visible en tablet/PC) --}}
+        {{-- "hidden lg:flex" asegura que no ocupe espacio ni moleste en celulares --}}
+        <div
+            class="lg:col-span-5 relative hidden lg:flex justify-center items-center perspective-1000 animate-fade-in-right">
             <div
-                class="absolute bottom-[-40px] left-1/2 -translate-x-1/2 w-[60%] h-[20%] bg-[#ff0056] blur-[50px] opacity-30 animate-pulse-slow">
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-[#ff0056]/20 to-[#9900ff]/20 rounded-full blur-[80px] -z-10 animate-pulse-slow">
             </div>
 
-            <img src="{{ asset('images/robot.svg') }}" alt="Agente IA WebinizaDev"
-                class="relative z-10 w-full max-w-[380px] h-auto object-contain animate-float drop-shadow-[0_0_30px_rgba(255,0,86,0.25)]"
-                style="transform-style: preserve-3d;">
+            <img src="{{ asset('images/robot.svg') }}" alt="Agente IA"
+                class="relative z-10 w-full max-w-[450px] h-auto object-contain animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]">
 
             <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white/5 rounded-full animate-spin-slow -z-10">
-            </div>
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] border border-dashed border-white/10 rounded-full -z-10">
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border border-white/5 rounded-full animate-spin-slow -z-10">
             </div>
         </div>
     </div>
 
-    {{-- Indicador Scroll --}}
-    <a href="#servicios"
-        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 hover:text-white transition-colors duration-300 z-20">
-        <span class="text-[10px] uppercase tracking-[0.2em]">Descubrí cómo</span>
-        <i class="fa-solid fa-chevron-down animate-bounce text-sm"></i>
-    </a>
-
-    {{-- SCRIPTS VANTA --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            try {
-                VANTA.NET({
-                    el: "#inicio",
-                    mouseControls: true, touchControls: true, gyroControls: false, minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00,
-                    color: 0xff0056, backgroundColor: 0x2a002a, points: 14.00, maxDistance: 23.00, spacing: 18.00
-                });
-            } catch (e) { console.warn('Vanta JS error', e); }
-        });
-    </script>
+    {{-- Indicador Scroll (Solo visible si hay altura suficiente) --}}
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 animate-bounce hidden sm:block">
+        <a href="#nosotros"
+            class="flex flex-col items-center gap-2 text-white/30 hover:text-white transition-colors cursor-pointer">
+            <span class="text-[10px] uppercase tracking-widest">Descubrí cómo</span>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+        </a>
+    </div>
 
     <style>
+        /* Animaciones (sin cambios) */
         @keyframes float {
 
             0%,
@@ -129,30 +119,12 @@
             }
 
             50% {
-                transform: translateY(-25px);
+                transform: translateY(-20px);
             }
         }
 
         .animate-float {
-            animation: float 5s ease-in-out infinite;
-        }
-
-        @keyframes pulse-slow {
-
-            0%,
-            100% {
-                opacity: 0.3;
-                transform: translateX(-50%) scale(1);
-            }
-
-            50% {
-                opacity: 0.15;
-                transform: translateX(-50%) scale(1.1);
-            }
-        }
-
-        .animate-pulse-slow {
-            animation: pulse-slow 4s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite;
         }
 
         @keyframes spin-slow {
@@ -166,11 +138,7 @@
         }
 
         .animate-spin-slow {
-            animation: spin-slow 20s linear infinite;
-        }
-
-        .perspective-1000 {
-            perspective: 1000px;
+            animation: spin-slow 25s linear infinite;
         }
     </style>
 </section>
