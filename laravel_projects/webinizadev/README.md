@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://laravel.com"><img src="https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 11"></a>
+  <a href="https://laravel.com"><img src="https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 12"></a>
   <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS"></a>
   <a href="https://openai.com"><img src="https://img.shields.io/badge/OpenAI-API-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"></a>
   <a href="https://php.net"><img src="https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.2"></a>
@@ -36,7 +36,7 @@ El proyecto está construido sobre bases sólidas para garantizar escalabilidad 
 
 | Área | Tecnología | Descripción |
 | :--- | :--- | :--- |
-| **Backend** | [Laravel 11](https://laravel.com) | Framework PHP robusto para la lógica de negocio. |
+| **Backend** | [Laravel 12](https://laravel.com) | Framework PHP robusto para la lógica de negocio. |
 | **Frontend** | [Blade](https://laravel.com/docs/blade) + [TailwindCSS](https://tailwindcss.com) | Vistas dinámicas con estilos modernos y responsivos. |
 | **IA / Chatbot** | [OpenAI API](https://openai.com) | Procesamiento de lenguaje natural para el asistente virtual. |
 | **Base de Datos** | [MySQL](https://www.mysql.com) | Almacenamiento fiable de datos relacionales. |
@@ -44,9 +44,25 @@ El proyecto está construido sobre bases sólidas para garantizar escalabilidad 
 
 ---
 
+## 🏗️ Arquitectura y Despliegue (Hostinger)
+
+Este proyecto utiliza una estructura de directorios optimizada para seguridad en entornos de hosting compartido (shared hosting):
+
+### Estructura de Carpetas
+- **`/laravel_projects/webinizadev/`**: Contiene todo este código fuente (backend, lógica, `.env`). Se ubica **fuera** del directorio público.
+- **`/public_html/`**: Contiene solo el punto de entrada (`index.php`) y los assets compilados.
+
+### Metodología de Agente IA de Desarrollo
+El desarrollo de este proyecto es asistido por **Agentes de IA** (Antigravity/Gemini) que colaboran activamente en:
+1.  **Refactorización Automática**: Mantenimiento de la estructura separada y limpieza de código.
+2.  **Gestión de Git**: Automatización de commits, pushes y manejo de `.gitignore` complejos para esta estructura anidada.
+3.  **Optimización Continua**: Sugerencias de mejora en tiempo real basadas en las actualizaciones del framework (ej. migración a Laravel 12).
+
+---
+
 ## ✨ Características Principales
 
-### 🤖 Agente de IA Integrado
+### 🤖 Agente de IA Integrado (Feature)
 Un "empleado digital" que vive en el sitio web. Entrenado con la información de la empresa para dar respuestas precisas y empáticas a los visitantes, guiándolos hacia la contratación.
 
 ### 📱 Diseño Mobile-First
@@ -62,42 +78,41 @@ Uso de gradientes, efectos de vidrio (glassmorphism) y modo oscuro profundo para
 
 ## 🚀 Instalación Local
 
-Sigue estos pasos para levantar el proyecto en tu entorno local:
+Sigue estos pasos para levantar el proyecto en tu entorno local (asumiendo que has clonado el repositorio raíz):
 
-1. **Clonar el repositorio**
-   ```bash
-   git clone https://github.com/tony2688/webinizadev.git
-   cd webinizadev
-   ```
+1.  **Navegar al directorio del proyecto**
+    ```bash
+    cd laravel_projects/webinizadev
+    ```
 
-2. **Instalar dependencias de PHP**
-   ```bash
-   composer install
-   ```
+2.  **Instalar dependencias de PHP**
+    ```bash
+    composer install
+    ```
 
-3. **Instalar dependencias de Node**
-   ```bash
-   npm install
-   npm run build
-   ```
+3.  **Instalar dependencias de Node**
+    ```bash
+    npm install
+    npm run build
+    ```
 
-4. **Configurar entorno**
-   Copia el archivo de ejemplo y genera la clave de aplicación.
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
-   *Configura tu base de datos y credenciales de OpenAI en el archivo `.env`.*
+4.  **Configurar entorno**
+    Copia el archivo de ejemplo y genera la clave de aplicación.
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+    *Configura tu base de datos y credenciales de OpenAI en el archivo `.env`.*
 
-5. **Correr migraciones**
-   ```bash
-   php artisan migrate
-   ```
+5.  **Correr migraciones**
+    ```bash
+    php artisan migrate
+    ```
 
-6. **Iniciar servidor**
-   ```bash
-   php artisan serve
-   ```
+6.  **Iniciar servidor**
+    ```bash
+    php artisan serve
+    ```
 
 Visita `http://localhost:8000` en tu navegador.
 
@@ -114,6 +129,6 @@ Este proyecto es liderado por expertos en tecnología:
 ---
 
 <p align="center">
-  © 2024-2025 WebinizaDev. Todos los derechos reservados. <br>
+  © 2024-2026 WebinizaDev. Todos los derechos reservados. <br>
   <a href="https://webinizadev.com">www.webinizadev.com</a>
 </p>
