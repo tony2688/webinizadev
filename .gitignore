@@ -1,0 +1,30 @@
+
+# System
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+
+# Nested Git backup
+laravel_projects/webinizadev/.git_backup
+
+# Laravel Project - Webinizadev
+laravel_projects/webinizadev/.env
+laravel_projects/webinizadev/.env.backup
+laravel_projects/webinizadev/.env.production
+laravel_projects/webinizadev/vendor
+laravel_projects/webinizadev/node_modules
+laravel_projects/webinizadev/public/build
+laravel_projects/webinizadev/public/hot
+laravel_projects/webinizadev/public/storage
+laravel_projects/webinizadev/storage/*.key
+laravel_projects/webinizadev/storage/pail
+laravel_projects/webinizadev/.phpunit.cache
+laravel_projects/webinizadev/.phpunit.result.cache
+laravel_projects/webinizadev/npm-debug.log
+laravel_projects/webinizadev/yarn-error.log
+laravel_projects/webinizadev/auth.json
+
+# If there are other vendor folders in public_html or elsewhere
+vendor/
+node_modules/

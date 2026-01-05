@@ -1,0 +1,62 @@
+@keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(18, 140, 126, 0.6);
+    }
+  }
+  
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  .animate-floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  
+  /* h2 Estilo */
+  @keyframes animatedGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .animated-gradient-text {
+    background-image: linear-gradient(90deg, #ff0000, #d633ff, #8b5cf6);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: animatedGradient 4s ease-in-out infinite;
+  }
+
+  /* Card Equipo Estilo */
+
+  @keyframes animatedGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .text-gradient-animated {
+    background-image: linear-gradient(90deg, #ff0000, #d633ff, #8b5cf6);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: animatedGradient 4s ease-in-out infinite;
+  }
+  

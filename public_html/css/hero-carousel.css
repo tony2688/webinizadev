@@ -1,0 +1,61 @@
+/* Estilos adicionales para el carrusel del hero */
+
+/* Efecto de transición suave para el carrusel */
+.swiper-container {
+    transition: all 0.5s ease;
+}
+
+.swiper-initialized {
+    opacity: 1;
+}
+
+/* Estilos para las flechas de navegación */
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+/* Estilos para la paginación */
+.swiper-pagination-bullet {
+    background-color: rgba(255, 79, 163, 0.7) !important;
+    opacity: 0.7 !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: rgba(255, 79, 163, 1) !important;
+    opacity: 1 !important;
+    transform: scale(1.2);
+}
+
+/* Efecto de fade para las diapositivas */
+.swiper-fade .swiper-slide {
+    transition-property: opacity;
+}
+
+.swiper-fade .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0 !important;
+}
+
+/* Animación para las imágenes dentro de las diapositivas */
+.swiper-slide img {
+    transition: transform 0.5s ease;
+}
+
+.swiper-slide-active img {
+    transform: scale(1.05);
+}

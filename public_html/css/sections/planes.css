@@ -1,0 +1,326 @@
+/* Estilos específicos para la sección de planes */
+
+/* Animaciones personalizadas */
+@keyframes animated-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floating-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes floating-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(153, 0, 255, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(153, 0, 255, 0.6), 0 0 60px rgba(255, 0, 0, 0.3); }
+}
+
+@keyframes scale-bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Texto con gradiente animado */
+.animated-gradient-text {
+    background: linear-gradient(-45deg, #9900ff, #ff0000, #cc33ff, #ff3366);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated-gradient 3s ease infinite;
+}
+
+/* Animaciones de elementos flotantes */
+.animate-floating-medium {
+    animation: floating-medium 6s ease-in-out infinite;
+}
+
+.animate-floating-slow {
+    animation: floating-slow 8s ease-in-out infinite;
+}
+
+/* Tarjetas de precios mejoradas */
+.pricing-card {
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.pricing-card:hover::before {
+    left: 100%;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(153, 0, 255, 0.3),
+        0 0 60px rgba(255, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Efectos de badges */
+.pricing-card span[class*="bg-gradient"] {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.pricing-card span[class*="bg-gradient"]:hover {
+    transform: scale(1.1);
+    animation: pulse-glow 2s infinite;
+}
+
+/* Botones de acción mejorados */
+.pricing-card a[class*="bg-gradient"] {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pricing-card a[class*="bg-gradient"]:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 10px 30px rgba(153, 0, 255, 0.4),
+        0 0 40px rgba(255, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pricing-card a[class*="bg-gradient"]:active {
+    transform: translateY(0) scale(1.02);
+}
+
+/* Efectos de texto de precio */
+.pricing-card .text-4xl,
+.pricing-card .text-5xl {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover .text-4xl,
+.pricing-card:hover .text-5xl {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(204, 51, 255, 0.5);
+}
+
+/* Plan Premium destacado */
+.pricing-card.transform.scale-105 {
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(26, 11, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+}
+
+.pricing-card.transform.scale-105::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff0000, #9900ff, #ff0000);
+    border-radius: inherit;
+    z-index: -1;
+    animation: animated-gradient 3s ease infinite;
+}
+
+/* Badge Premium animado */
+.pricing-card .absolute.-top-4.-right-4 {
+    animation: scale-bounce 2s infinite;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* Badge Premium mejorado */
+.pricing-card .absolute:has-text("PREMIUM") {
+    background: linear-gradient(135deg, #ff0000, #9900ff);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+    z-index: 20;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Asegurar que el badge sea visible */
+.pricing-card {
+    position: relative;
+    overflow: visible !important;
+}
+
+.pricing-card .absolute {
+    z-index: 20 !important;
+}
+
+/* Lista de características mejorada */
+.pricing-card ul li {
+    transition: all 0.3s ease;
+    padding: 4px 0;
+}
+
+.pricing-card:hover ul li {
+    transform: translateX(5px);
+}
+
+.pricing-card ul li:nth-child(odd) {
+    transition-delay: 0.1s;
+}
+
+.pricing-card ul li:nth-child(even) {
+    transition-delay: 0.2s;
+}
+
+/* Iconos SVG animados */
+.pricing-card svg {
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover svg {
+    transform: rotate(10deg) scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(204, 51, 255, 0.5));
+}
+
+/* Sección de garantías */
+.pricing-card + .mt-16 .grid > div {
+    transition: all 0.3s ease;
+}
+
+.pricing-card + .mt-16 .grid > div:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card + .mt-16 .grid > div:hover .w-16 {
+    animation: scale-bounce 1s infinite;
+}
+
+/* Efectos de hover para elementos de garantía */
+.pricing-card + .mt-16 .w-16 {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card + .mt-16 .w-16::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(153, 0, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.pricing-card + .mt-16 .grid > div:hover .w-16::before {
+    width: 120%;
+    height: 120%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pricing-card {
+        margin-bottom: 2rem;
+    }
+    
+    .pricing-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .animated-gradient-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .pricing-card .text-4xl,
+    .pricing-card .text-5xl {
+        font-size: 2rem;
+    }
+    
+    .pricing-card .text-2xl {
+        font-size: 1.5rem;
+    }
+    
+    .pricing-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Mejoras de accesibilidad */
+.pricing-card:focus-within {
+    outline: 2px solid rgba(204, 51, 255, 0.5);
+    outline-offset: 2px;
+}
+
+.pricing-card a:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Efectos de carga */
+.pricing-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.pricing-card:nth-child(1) { animation-delay: 0.1s; }
+.pricing-card:nth-child(2) { animation-delay: 0.2s; }
+.pricing-card:nth-child(3) { animation-delay: 0.3s; }
+.pricing-card:nth-child(4) { animation-delay: 0.4s; }
+.pricing-card:nth-child(5) { animation-delay: 0.5s; }
+.pricing-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efectos de partículas de fondo */
+.pricing-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(153, 0, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(204, 51, 255, 0.05) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.pricing-card:hover::after {
+    opacity: 1;
+}
